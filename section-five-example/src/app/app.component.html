@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="row">
+    <app-cockpit 
+    (serverCreated)="onServerCreated($event)"
+    (bpCreated)="onBluePrintCreated($event)"
+    
+    ></app-cockpit>
+  </div>
+  <hr>
+    <app-server-element 
+    *ngFor="let serelement of serverElements"
+    [serElement]="serelement">
+  </app-server-element> 
+  
+  <!-- <app-server-element 
+  *ngFor="let serelement of serverElements"
+  [serElement]="serelement">
+  <p>
+    <strong *ngIf="serelement.type === 'server'" style="color: red">{{ serelement.content }}</strong>
+    <em *ngIf="serelement.type === 'blueprint'"  >{{ serelement.content }}</em>
+  </p> 
+
+</app-server-element> -->
+
+</div>
+ 
